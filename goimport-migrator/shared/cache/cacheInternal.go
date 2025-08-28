@@ -17,7 +17,7 @@ func Set(key, value string) {
 
 func Get(key string) (string, bool) {
 	CachePWD.RLock()
-	defer CachePWD.Unlock()
+	defer CachePWD.RUnlock() // Fixed the defer call, it was unlocking something that wasn't locked
 	val, ok := CachePWD.data[key]
 	return val, ok
 }

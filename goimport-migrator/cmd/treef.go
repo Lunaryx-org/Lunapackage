@@ -5,14 +5,14 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var mapCmd = &cobra.Command{
-	Use:   "map",
-	Short: "Prints the number of files/folders under the working directory",
+var treefCmd = &cobra.Command{
+	Use:   "tree",
+	Short: "Argument to print the files on the current workind directory",
 	Run: func(cmd *cobra.Command, args []string) {
-		shared.Map()
+		shared.TreeFprint()
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(mapCmd)
+	rootCmd.AddCommand(treefCmd)
 }
